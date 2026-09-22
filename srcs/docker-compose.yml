@@ -58,12 +58,14 @@ services:
       - wp_user_password
 volumes:
   wordpress:
+    name: wordpress
     driver: local
     driver_opts:
       type: 'none'
       o: 'bind'
       device: '/home/rduport/data/wordpress'
   mariadb:
+    name: mariadb
     driver: local
     driver_opts:
       type: 'none'
@@ -73,6 +75,7 @@ volumes:
 networks:
   inception:
     driver: bridge
+    name: inception
 
 secrets:
   db_password:
